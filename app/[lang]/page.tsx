@@ -6,6 +6,7 @@ import BgArcs from '@/components/BgArcs';
 import Nav from '@/components/Nav';
 import MobileMenu from '@/components/MobileMenu';
 import BackToTop from '@/components/BackToTop';
+import A11yPanel from '@/components/A11yPanel';
 import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
 import Initiator from '@/components/sections/Initiator';
@@ -41,7 +42,14 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         element. Without it the sections that overflow horizontally (they are
         clipped by `overflow-x: clip`) widen the body's scroll area.
       */}
-      <div>
+      {/*
+        Skip link: 60 partner logos and eleven sections sit between the nav and
+        the contact details, so this is load-bearing, not a formality. It is
+        `position:absolute` and off-screen until focused, so it costs no layout.
+      */}
+      <a href="#content" className="l2-skip">{t.skipToContent}</a>
+      <Nav {...props} lang={lang} />
+      <main id="main">
       <div
         dir={v.dir}
         lang={lang}
@@ -56,7 +64,6 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         }}
       >
         <BgArcs v={v} />
-        <Nav {...props} lang={lang} />
         <Hero {...props} />
         <About {...props} />
         <Initiator {...props} />
@@ -71,10 +78,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <PartnerLogos {...props} />
       <Team {...props} />
       <Contact {...props} />
-      <Footer {...props} />
+      </main>
+      <Footer {...props} lang={lang} />
       <MobileMenu {...props} />
       <BackToTop t={t} />
-      </div>
+      <A11yPanel t={t} lang={lang} />
     </MenuProvider>
   );
 }

@@ -10,7 +10,7 @@ import Image from 'next/image';
 export default function Quotes({ t, v, children }: SectionProps & { children: ReactNode }) {
   return (
     <>
-        <div id="quotes" data-screen-label="Management quotes" className="l2-sec" style={{
+        <section id="quotes" data-screen-label="Management quotes" aria-labelledby="sec-quotes" className="l2-sec" style={{
           padding: "56px 80px",
           boxSizing: "border-box",
           position: "relative",
@@ -34,7 +34,7 @@ export default function Quotes({ t, v, children }: SectionProps & { children: Re
                 letterSpacing: "0.04em",
                 marginBottom: "16px",
               }}>{t.quotesEyebrow}</div>
-              <h2 className="l2-reveal" style={{
+              <h2 id="sec-quotes" className="l2-reveal" style={{
                 margin: "0",
                 fontSize: v.quotesTitleFontSize,
                 fontWeight: "700",
@@ -98,7 +98,7 @@ export default function Quotes({ t, v, children }: SectionProps & { children: Re
                 <div style={{
                   fontSize: v.fs20,
                   lineHeight: "1.5",
-                  color: "#8A8FA3",
+                  color: "#5B6472",
                   marginTop: v.quoteTextMarginTop,
                 }}>{t.quote1Text}<Image width={142} height={142} src="/img/quote-mark.webp" alt="" className="l2-quote-mark l2-quote-mark-bottom" style={{
                   position: "absolute",
@@ -154,8 +154,8 @@ export default function Quotes({ t, v, children }: SectionProps & { children: Re
                     marginTop: "2px",
                   }}>{t.quote1Title}</div>
                   <div style={{
-                    fontSize: "11px",
-                    color: "#B0AFB6",
+                    fontSize: "13px",
+                    color: "#6B7280",
                     marginTop: "36px",
                   }}>{t.quote1Credit}</div>
                 </div>
@@ -196,7 +196,7 @@ export default function Quotes({ t, v, children }: SectionProps & { children: Re
                   <div style={{
                     fontSize: v.fs20,
                     lineHeight: "1.5",
-                    color: "#8A8FA3",
+                    color: "#5B6472",
                     marginTop: v.quoteTextMarginTop,
                   }}>{t.quote2Text}</div>
                 </div>
@@ -249,8 +249,8 @@ export default function Quotes({ t, v, children }: SectionProps & { children: Re
                     marginTop: "2px",
                   }}>{t.quote2Title}</div>
                   <div style={{
-                    fontSize: "11px",
-                    color: "#B0AFB6",
+                    fontSize: "13px",
+                    color: "#6B7280",
                     marginTop: "20px",
                   }}>{t.quote2Credit}</div>
 
@@ -273,7 +273,7 @@ export default function Quotes({ t, v, children }: SectionProps & { children: Re
 
         {/* ================= OPPORTUNITY (bright) ================= */}
       {children}
-        </div>
+        </section>
     </>
   );
 }

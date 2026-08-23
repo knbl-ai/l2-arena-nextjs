@@ -154,4 +154,21 @@ export const en: Dictionary = {
   unitMin: "min",
   showMore: "Show more",
   showLess: "Show less",
+
+  /* --- accessibility additions (not present in the original bundle) --- */
+  skipToContent: "Skip to main content",
+  ariaPrimaryNav: "Primary navigation",
+  opensInNewWindow: "(opens in a new window)",
+  a11yOpenPanel: "Open accessibility menu",
+  a11yTitle: "Accessibility menu",
+  a11yTextSize: "Text size",
+  a11yContrast: "High contrast",
+  a11yGrayscale: "Grayscale",
+  a11yHighlightLinks: "Highlight links",
+  a11yStopAnimations: "Stop animations",
+  a11yReadableFont: "Readable font",
+  a11yBigCursor: "Large cursor",
+  a11yReset: "Reset settings",
+  a11yStatementLink: "Accessibility statement",
+  ariaTeamSection: "Project team",
 };

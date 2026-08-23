@@ -3,7 +3,7 @@ import type { SectionProps } from '@/lib/props';
 export default function About({ t, v }: SectionProps) {
   return (
     <>
-      <div id="about" data-screen-label="About the Arena" className="l2-sec" style={{
+      <section id="about" data-screen-label="About the Arena" aria-labelledby="sec-about" className="l2-sec" style={{
         position: "relative",
         padding: "56px 80px",
         boxSizing: "border-box",
@@ -48,7 +48,7 @@ export default function About({ t, v }: SectionProps) {
               letterSpacing: "0.04em",
               marginBottom: "16px",
             }}>{t.aboutEyebrow}</div>
-            <h2 className="l2-reveal" style={{
+            <h2 id="sec-about" className="l2-reveal" style={{
               margin: "0 0 20px",
               fontSize: v.aboutTitleFontSize,
               fontWeight: "700",
@@ -108,7 +108,7 @@ export default function About({ t, v }: SectionProps) {
                 padding: "44px",
               }}>
                 <div style={{
-                  color: "#B08A45",
+                  color: "#8D6E37",
                   fontSize: v.fs144,
                   fontWeight: "600",
                   letterSpacing: "0.02em",
@@ -140,7 +140,7 @@ export default function About({ t, v }: SectionProps) {
                 padding: "44px",
               }}>
                 <div style={{
-                  color: "#B08A45",
+                  color: "#8D6E37",
                   fontSize: v.fs144,
                   fontWeight: "600",
                   letterSpacing: "0.02em",
@@ -172,7 +172,7 @@ export default function About({ t, v }: SectionProps) {
                 padding: "44px",
               }}>
                 <div style={{
-                  color: "#B08A45",
+                  color: "#8D6E37",
                   fontSize: v.fs144,
                   fontWeight: "600",
                   letterSpacing: "0.02em",
@@ -204,7 +204,7 @@ export default function About({ t, v }: SectionProps) {
                 padding: "44px",
               }}>
                 <div style={{
-                  color: "#B08A45",
+                  color: "#8D6E37",
                   fontSize: v.fs144,
                   fontWeight: "600",
                   letterSpacing: "0.02em",
@@ -264,7 +264,7 @@ export default function About({ t, v }: SectionProps) {
           </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

@@ -1,15 +1,44 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import type { SectionProps } from '@/lib/props';
 import { useMenu } from '@/components/MenuProvider';
+import { useFocusTrap } from '@/lib/useFocusTrap';
 
 export default function MobileMenu({ t, v }: SectionProps) {
   const { mobileMenuOpen, toggleMobileMenu } = useMenu();
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  useFocusTrap(panelRef, mobileMenuOpen, toggleMobileMenu);
+
+  /*
+   * While the overlay is open the page behind it must be neither scrollable nor
+   * reachable by a screen reader's virtual cursor. `inert` is set imperatively
+   * because <main> is rendered by a server component; the overlay itself lives
+   * outside <main> so it stays interactive.
+   */
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const main = document.getElementById('main');
+    const prevOverflow = document.body.style.overflow;
+    main?.setAttribute('inert', '');
+    document.body.style.overflow = 'hidden';
+    return () => {
+      main?.removeAttribute('inert');
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <>
       {mobileMenuOpen && (
-        <div style={{
+        <div
+          ref={panelRef}
+          id="l2-mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label={t.ariaMenu}
+          style={{
           position: "fixed",
           top: "0",
           left: "0",
@@ -124,7 +153,7 @@ export default function MobileMenu({ t, v }: SectionProps) {
             fontFamily: "inherit",
             cursor: "pointer",
             width: "100%",
-          }}>{t.rfpCta} {t.arrow}</a>
+          }}>{t.rfpCta} {t.arrow}<span className="l2-visually-hidden">{t.opensInNewWindow}</span></a>
         </div>
       )}
     </>

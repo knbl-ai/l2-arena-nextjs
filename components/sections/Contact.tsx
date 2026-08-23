@@ -3,7 +3,7 @@ import type { SectionProps } from '@/lib/props';
 export default function Contact({ t, v }: SectionProps) {
   return (
     <>
-        <div id="contact" data-screen-label="Contact and RFP" className="l2-sec" style={{
+        <section id="contact" data-screen-label="Contact and RFP" aria-label={t.navContact} className="l2-sec" style={{
           // Outside the dir="rtl" wrapper in the original document, so this box
           // laid out LTR and its contents were authored against that.
           direction: "ltr",
@@ -13,7 +13,7 @@ export default function Contact({ t, v }: SectionProps) {
           overflow: "hidden",
           scrollMarginTop: "110px",
         }}>
-        <svg width="500" height="500" viewBox="0 0 500 500" style={{
+        <svg aria-hidden="true" focusable="false" width="500" height="500" viewBox="0 0 500 500" style={{
           position: "absolute",
           bottom: "-140px",
           left: "-140px",
@@ -139,7 +139,7 @@ export default function Contact({ t, v }: SectionProps) {
                   justifyContent: "center",
                   gap: "8px",
                   flexDirection: v.rfpBtnFlexDirection,
-                }}><span>{t.arrow}</span><span>{t.rfpCta}</span></a>
+                }}><span>{t.arrow}</span><span>{t.rfpCta}</span><span className="l2-visually-hidden">{t.opensInNewWindow}</span></a>
 
               </div>
               <div style={{
@@ -184,7 +184,7 @@ export default function Contact({ t, v }: SectionProps) {
 
 
         </div>
-      </div>
+      </section>
     </>
   );
 }

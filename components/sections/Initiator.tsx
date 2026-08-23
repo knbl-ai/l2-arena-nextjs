@@ -3,7 +3,7 @@ import type { SectionProps } from '@/lib/props';
 export default function Initiator({ t, v }: SectionProps) {
   return (
     <>
-        <div id="initiator" data-screen-label="Initiator" className="l2-sec" style={{
+        <section id="initiator" data-screen-label="Initiator" aria-labelledby="sec-initiator" className="l2-sec" style={{
           position: "relative",
           padding: "56px 80px",
           boxSizing: "border-box",
@@ -166,7 +166,7 @@ export default function Initiator({ t, v }: SectionProps) {
                 letterSpacing: "0.04em",
                 marginBottom: "16px",
               }}>{t.initEyebrow}</div>
-              <h2 className="l2-reveal" style={{
+              <h2 id="sec-initiator" className="l2-reveal" style={{
                 margin: "0 0 20px",
                 fontSize: v.initTitleFontSize,
                 fontWeight: "700",
@@ -201,11 +201,11 @@ export default function Initiator({ t, v }: SectionProps) {
         boxShadow: "0 10px 24px rgba(6,32,85,0.25)",
         textDecoration: "none",
         fontFamily: "inherit",
-      }}>{t.initLink} {t.arrow}</a>
+      }}>{t.initLink} {t.arrow}<span className="l2-visually-hidden">{t.opensInNewWindow}</span></a>
               </div>
             </div>
           </div>
-        </div>
+        </section>
     </>
   );
 }

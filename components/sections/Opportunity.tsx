@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Opportunity({ t, v }: SectionProps) {
   return (
     <>
-      <div id="opportunity" data-screen-label="Investment opportunity" className="l2-sec" style={{
+      <section id="opportunity" data-screen-label="Investment opportunity" aria-labelledby="sec-opportunity" className="l2-sec" style={{
         padding: "56px 80px 32px",
         boxSizing: "border-box",
         overflow: "visible",
@@ -47,7 +47,7 @@ export default function Opportunity({ t, v }: SectionProps) {
                 letterSpacing: "0.04em",
                 marginBottom: "16px",
               }}>{t.oppEyebrow}</div>
-              <h2 className="l2-reveal l2-h2 l2-fixed-text" style={{
+              <h2 id="sec-opportunity" className="l2-reveal l2-h2 l2-fixed-text" style={{
                 margin: "0",
                 fontSize: v.oppTitleFontSize,
                 fontWeight: "700",
@@ -491,7 +491,7 @@ export default function Opportunity({ t, v }: SectionProps) {
           </div>
           </div>
 
-        </div>
+        </section>
     </>
   );
 }

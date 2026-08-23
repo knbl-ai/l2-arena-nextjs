@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Timeline({ t, v }: SectionProps) {
   return (
     <>
-      <div id="timeline" data-screen-label="Timeline" className="l2-sec" style={{
+      <section id="timeline" data-screen-label="Timeline" aria-labelledby="sec-timeline" className="l2-sec" style={{
         // Outside the dir="rtl" wrapper in the original document, so this box
         // laid out LTR and its contents were authored against that.
         direction: "ltr",
@@ -37,7 +37,7 @@ export default function Timeline({ t, v }: SectionProps) {
               letterSpacing: "0.04em",
               marginBottom: "16px",
             }}>{t.timelineEyebrow}</div>
-            <h2 className="l2-reveal l2-h2 l2-fixed-text" style={{
+            <h2 id="sec-timeline" className="l2-reveal l2-h2 l2-fixed-text" style={{
               margin: "0",
               fontSize: v.timelineTitleFontSize,
               fontWeight: "700",
@@ -91,7 +91,7 @@ export default function Timeline({ t, v }: SectionProps) {
               }} />
             </>)}
           </div>
-        </div></div>
+        </div></section>
     </>
   );
 }

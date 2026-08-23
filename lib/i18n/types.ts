@@ -154,4 +154,21 @@ export type Dictionary = {
   unitMin: string;
   showMore: string;
   showLess: string;
+
+  /* --- accessibility additions (not present in the original bundle) --- */
+  skipToContent: string;
+  ariaPrimaryNav: string;
+  opensInNewWindow: string;
+  a11yOpenPanel: string;
+  a11yTitle: string;
+  a11yTextSize: string;
+  a11yContrast: string;
+  a11yGrayscale: string;
+  a11yHighlightLinks: string;
+  a11yStopAnimations: string;
+  a11yReadableFont: string;
+  a11yBigCursor: string;
+  a11yReset: string;
+  a11yStatementLink: string;
+  ariaTeamSection: string;
 };

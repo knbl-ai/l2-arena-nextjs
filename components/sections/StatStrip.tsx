@@ -2,6 +2,7 @@
 
 import { useCallback, useRef, useState } from 'react';
 import type { SectionProps } from '@/lib/props';
+import { prefersReducedMotion } from '@/lib/reducedMotion';
 
 const TARGETS = { seats: 20000, rights: 195000, land: 35, transit: 5 };
 const DURATION = 1400;
@@ -13,11 +14,22 @@ const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
  * than the whole document, which is what the original did.
  */
 export default function StatStrip({ t, v }: SectionProps) {
-  const [counts, setCounts] = useState({ seats: 0, rights: 0, land: 0, transit: 0 });
+  /*
+   * Seeded with the real figures, not zeros. The server-rendered HTML is what
+   * search engines and any non-JS reader see, and "0 seats" is not merely a
+   * missing animation — it is wrong content. The zeroing below runs on mount,
+   * long before this strip is scrolled into view.
+   */
+  const [counts, setCounts] = useState(TARGETS);
   const started = useRef(false);
 
   const statStripRef = useCallback((el: HTMLDivElement | null) => {
     if (!el || started.current) return;
+    // Reduced motion keeps the seeded values and never arms the observer.
+    if (prefersReducedMotion()) { started.current = true; return; }
+    // Drop to zero here rather than in an effect: ref callbacks run during
+    // commit, so the seeded values never reach the screen.
+    setCounts({ seats: 0, rights: 0, land: 0, transit: 0 });
     const observer = new IntersectionObserver((entries) => {
       if (!entries.some((entry) => entry.isIntersecting) || started.current) return;
       started.current = true;

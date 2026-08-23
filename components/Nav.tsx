@@ -16,7 +16,7 @@ export default function Nav({ t, v, lang }: SectionProps & { lang: Lang }) {
   return (
     <>
       {/* ================= NAV ================= */}
-      <div className="l2-nav-outer" style={{
+      <header role="banner" className="l2-nav-outer" style={{
         position: "fixed",
         top: "0",
         left: "0",
@@ -55,8 +55,8 @@ export default function Nav({ t, v, lang }: SectionProps & { lang: Lang }) {
             cursor: "pointer",
             whiteSpace: "nowrap",
             flex: "none",
-          }}>{t.rfpCta} {t.arrow}</a>
-          <div className="l2-nav-links" style={{
+          }}>{t.rfpCta} {t.arrow}<span className="l2-visually-hidden">{t.opensInNewWindow}</span></a>
+          <nav aria-label={t.ariaPrimaryNav} className="l2-nav-links" style={{
             display: "flex",
             alignItems: "center",
             gap: v.navLinksGap,
@@ -91,7 +91,7 @@ export default function Nav({ t, v, lang }: SectionProps & { lang: Lang }) {
               textDecoration: "none",
             }}>{t.navContact}</a>
 
-          </div>
+          </nav>
           <div style={{
             display: "flex",
             alignItems: "center",
@@ -116,7 +116,7 @@ export default function Nav({ t, v, lang }: SectionProps & { lang: Lang }) {
                 objectFit: "contain",
               }} />
             </div>
-            <Link href={`/${otherLang(lang)}`} className="l2-btn-primary" scroll={false} style={{
+            <Link href={`/${otherLang(lang)}`} hrefLang={otherLang(lang)} lang={otherLang(lang)} className="l2-btn-primary" scroll={false} style={{
               display: "flex",
               alignItems: "center",
               gap: "7px",
@@ -131,7 +131,7 @@ export default function Nav({ t, v, lang }: SectionProps & { lang: Lang }) {
               fontWeight: "700",
               boxShadow: "0 8px 20px rgba(6,32,85,0.28)",
             }}>
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18" /></svg>
+              <svg aria-hidden="true" focusable="false" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18" /></svg>
               {v.langToggleLabel}
             </Link>
             <a href="https://calcalitlod.co.il/auctions/%d7%94%d7%96%d7%9e%d7%a0%d7%94-%d7%9c%d7%94%d7%a9%d7%aa%d7%aa%d7%a3-%d7%91%d7%94%d7%9c%d7%99%d7%9a-%d7%9e%d7%99%d7%95%d7%9f-%d7%9e%d7%95%d7%a7%d7%93%d7%9d-pre-qualification-%d7%91%d7%9e%d7%a1/" target="_blank" rel="noopener noreferrer" className="l2-mobile-rfp" style={{
@@ -148,8 +148,8 @@ export default function Nav({ t, v, lang }: SectionProps & { lang: Lang }) {
               whiteSpace: "nowrap",
               cursor: "pointer",
               fontFamily: "inherit",
-            }}>{t.rfpCta}</a>
-            <button className="l2-hamburger" onClick={toggleMobileMenu} aria-label={t.ariaMenu} style={{
+            }}>{t.rfpCta}<span className="l2-visually-hidden">{t.opensInNewWindow}</span></a>
+            <button className="l2-hamburger" onClick={toggleMobileMenu} aria-label={t.ariaMenu} aria-expanded={mobileMenuOpen} aria-controls="l2-mobile-menu" style={{
               display: "none",
               background: "transparent",
               border: "none",
@@ -192,7 +192,7 @@ export default function Nav({ t, v, lang }: SectionProps & { lang: Lang }) {
           </div>
         </div>
 
-      </div>
+      </header>
     </>
   );
 }

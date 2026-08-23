@@ -3,7 +3,7 @@ import type { SectionProps } from '@/lib/props';
 export default function Benefits({ t, v }: SectionProps) {
   return (
     <>
-      <div data-screen-label="Cooperation banner" className="l2-sec" style={{
+      <section data-screen-label="Cooperation banner" aria-labelledby="sec-benefits" className="l2-sec" style={{
         // Outside the dir="rtl" wrapper in the original document, so this box
         // laid out LTR and its contents were authored against that.
         direction: "ltr",
@@ -21,7 +21,7 @@ export default function Benefits({ t, v }: SectionProps) {
               textAlign: v.textAlign,
               marginBottom: "32px",
             }}>
-              <h2 className="l2-reveal l2-h2 l2-fixed-text" style={{
+              <h2 id="sec-benefits" className="l2-reveal l2-h2 l2-fixed-text" style={{
                 margin: "0",
                 fontSize: v.benefitsTitleFontSize,
                 fontWeight: "700",
@@ -70,7 +70,7 @@ export default function Benefits({ t, v }: SectionProps) {
                     padding: "18px 4px",
                     borderBottom: "1px solid rgba(157,115,49,0.14)",
                   }}>
-                    <svg width="20" height="16" viewBox="0 0 18 14" fill="none" style={{
+                    <svg aria-hidden="true" focusable="false" width="20" height="16" viewBox="0 0 18 14" fill="none" style={{
                       flex: "none",
                       marginTop: "6px",
                       transform: v.benefitArrowFlip,
@@ -91,7 +91,7 @@ export default function Benefits({ t, v }: SectionProps) {
                     padding: "18px 4px",
                     borderBottom: "1px solid rgba(157,115,49,0.14)",
                   }}>
-                    <svg width="20" height="16" viewBox="0 0 18 14" fill="none" style={{
+                    <svg aria-hidden="true" focusable="false" width="20" height="16" viewBox="0 0 18 14" fill="none" style={{
                       flex: "none",
                       marginTop: "6px",
                       transform: v.benefitArrowFlip,
@@ -111,7 +111,7 @@ export default function Benefits({ t, v }: SectionProps) {
                     padding: "18px 4px",
                     borderBottom: "1px solid rgba(157,115,49,0.14)",
                   }}>
-                    <svg width="20" height="16" viewBox="0 0 18 14" fill="none" style={{
+                    <svg aria-hidden="true" focusable="false" width="20" height="16" viewBox="0 0 18 14" fill="none" style={{
                       flex: "none",
                       marginTop: "6px",
                       transform: v.benefitArrowFlip,
@@ -131,7 +131,7 @@ export default function Benefits({ t, v }: SectionProps) {
                     padding: "18px 4px",
                     borderBottom: "1px solid rgba(157,115,49,0.14)",
                   }}>
-                    <svg width="20" height="16" viewBox="0 0 18 14" fill="none" style={{
+                    <svg aria-hidden="true" focusable="false" width="20" height="16" viewBox="0 0 18 14" fill="none" style={{
                       flex: "none",
                       marginTop: "6px",
                       transform: v.benefitArrowFlip,
@@ -151,7 +151,7 @@ export default function Benefits({ t, v }: SectionProps) {
                     padding: "18px 4px",
                     borderBottom: "1px solid rgba(157,115,49,0.14)",
                   }}>
-                    <svg width="20" height="16" viewBox="0 0 18 14" fill="none" style={{
+                    <svg aria-hidden="true" focusable="false" width="20" height="16" viewBox="0 0 18 14" fill="none" style={{
                       flex: "none",
                       marginTop: "6px",
                       transform: v.benefitArrowFlip,
@@ -171,7 +171,7 @@ export default function Benefits({ t, v }: SectionProps) {
                     padding: "18px 4px",
                     borderBottom: "1px solid rgba(157,115,49,0.14)",
                   }}>
-                    <svg width="20" height="16" viewBox="0 0 18 14" fill="none" style={{
+                    <svg aria-hidden="true" focusable="false" width="20" height="16" viewBox="0 0 18 14" fill="none" style={{
                       flex: "none",
                       marginTop: "6px",
                       transform: v.benefitArrowFlip,
@@ -189,7 +189,7 @@ export default function Benefits({ t, v }: SectionProps) {
                     direction: v.dir,
                     padding: "18px 4px",
                   }}>
-                    <svg width="20" height="16" viewBox="0 0 18 14" fill="none" style={{
+                    <svg aria-hidden="true" focusable="false" width="20" height="16" viewBox="0 0 18 14" fill="none" style={{
                       flex: "none",
                       marginTop: "6px",
                       transform: v.benefitArrowFlip,
@@ -204,7 +204,7 @@ export default function Benefits({ t, v }: SectionProps) {
               </div>
             </div>
           </div>
-        </div>
+        </section>
     </>
   );
 }

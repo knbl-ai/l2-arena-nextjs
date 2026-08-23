@@ -3,7 +3,7 @@ import type { SectionProps } from '@/lib/props';
 export default function Team({ t, v }: SectionProps) {
   return (
     <>
-      <div data-screen-label="Team" className="l2-sec" style={{
+      <section data-screen-label="Team" aria-label={t.ariaTeamSection} className="l2-sec" style={{
         // Outside the dir="rtl" wrapper in the original document, so this box
         // laid out LTR and its contents were authored against that.
         direction: "ltr",
@@ -24,14 +24,14 @@ export default function Team({ t, v }: SectionProps) {
             direction: v.dir,
             textAlign: v.textAlign,
           }}>{t.teamMgmtTitle}</div>
-          <div className="l2-grid-team" style={{
+          <div role="list" className="l2-grid-team" style={{
             display: "grid",
             gridTemplateColumns: "repeat(4,1fr)",
             gap: "16px",
             direction: v.dir,
           }}>
             {t.teamManagement.map((member) => (
-              <div key={member.name} className="l2-card" style={{
+              <div key={member.name} role="listitem" className="l2-card" style={{
                 background: "#FFFFFF",
                 border: "1px solid rgba(157,115,49,0.2)",
                 borderRadius: "16px",
@@ -71,14 +71,14 @@ export default function Team({ t, v }: SectionProps) {
             direction: v.dir,
             textAlign: v.textAlign,
           }}>{t.teamProTitle}</div>
-          <div className="l2-grid-team-4" style={{
+          <div role="list" className="l2-grid-team-4" style={{
             display: "grid",
             gridTemplateColumns: "repeat(4,1fr)",
             gap: "16px",
             direction: v.dir,
           }}>
             {t.teamProfessional.map((member) => (
-              <div key={member.name} className="l2-card" style={{
+              <div key={member.name} role="listitem" className="l2-card" style={{
                 background: "#FFFFFF",
                 border: "1px solid rgba(157,115,49,0.2)",
                 borderRadius: "16px",
@@ -108,7 +108,7 @@ export default function Team({ t, v }: SectionProps) {
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

@@ -154,4 +154,21 @@ export const he: Dictionary = {
   unitMin: "דק'",
   showMore: "הצג עוד",
   showLess: "הצג פחות",
+
+  /* --- accessibility additions (not present in the original bundle) --- */
+  skipToContent: "דילוג לתוכן העמוד",
+  ariaPrimaryNav: "ניווט ראשי",
+  opensInNewWindow: "(נפתח בחלון חדש)",
+  a11yOpenPanel: "פתיחת תפריט נגישות",
+  a11yTitle: "תפריט נגישות",
+  a11yTextSize: "גודל הטקסט",
+  a11yContrast: "ניגודיות גבוהה",
+  a11yGrayscale: "גווני אפור",
+  a11yHighlightLinks: "הדגשת קישורים",
+  a11yStopAnimations: "עצירת אנימציות",
+  a11yReadableFont: "גופן קריא",
+  a11yBigCursor: "סמן עכבר גדול",
+  a11yReset: "איפוס הגדרות",
+  a11yStatementLink: "הצהרת נגישות",
+  ariaTeamSection: "צוות הפרויקט",
 };

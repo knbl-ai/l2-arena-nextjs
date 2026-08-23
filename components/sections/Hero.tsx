@@ -11,7 +11,7 @@ export default function Hero({ t, v }: SectionProps) {
 
   return (
     <>
-        <div data-screen-label="Hero" className="l2-sec" style={{
+        <section id="content" tabIndex={-1} data-screen-label="Hero" className="l2-sec" style={{
           position: "relative",
           padding: "80px 80px 0",
           marginTop: "80px",
@@ -127,7 +127,7 @@ export default function Hero({ t, v }: SectionProps) {
 
           {/* stat card row */}
       <StatStrip t={t} v={v} />
-        </div>
+        </section>
     </>
   );
 }

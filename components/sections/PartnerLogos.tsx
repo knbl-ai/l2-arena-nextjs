@@ -18,7 +18,7 @@ export default function PartnerLogos({ t, v }: SectionProps) {
 
   return (
     <>
-      <div data-screen-label="Partners who worked with the city" className="l2-sec" style={{
+      <section data-screen-label="Partners who worked with the city" aria-labelledby="sec-partners" className="l2-sec" style={{
         // Outside the dir="rtl" wrapper in the original document, so this box
         // laid out LTR and its contents were authored against that.
         direction: "ltr",
@@ -52,7 +52,7 @@ export default function PartnerLogos({ t, v }: SectionProps) {
               letterSpacing: "0.04em",
               marginBottom: "16px",
             }}>{t.logosEyebrow}</div>
-            <h2 className="l2-reveal l2-h2" style={{
+            <h2 id="sec-partners" className="l2-reveal l2-h2" style={{
               margin: "0",
               fontSize: v.logosTitleFontSize,
               fontWeight: "700",
@@ -808,7 +808,7 @@ export default function PartnerLogos({ t, v }: SectionProps) {
             }} /></div>
           </div>
           {logosExpanded && (
-            <div className="l2-grid-logos" style={{
+            <div id="l2-logos-extra" className="l2-grid-logos" style={{
               display: "grid",
               gridTemplateColumns: "repeat(6,1fr)",
               gap: "20px",
@@ -1303,7 +1303,7 @@ export default function PartnerLogos({ t, v }: SectionProps) {
             width: "100%",
             marginTop: "32px",
           }}>
-            <button onClick={() => setLogosExpanded((open) => !open)} style={{
+            <button onClick={() => setLogosExpanded((open) => !open)} aria-expanded={logosExpanded} aria-controls="l2-logos-extra" style={{
               background: "transparent",
               border: "1px solid rgba(157,115,49,0.35)",
               color: "#062055",
@@ -1319,10 +1319,10 @@ export default function PartnerLogos({ t, v }: SectionProps) {
               direction: v.dir,
             }}>
               <span>{logosToggleLabel}</span>
-              <svg width="14" height="9" viewBox="0 0 14 9" fill="none" style={logosExpanded ? { transform: 'rotate(180deg)' } : undefined}><path d="M1 1l6 6 6-6" stroke="#062055" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              <svg aria-hidden="true" focusable="false" width="14" height="9" viewBox="0 0 14 9" fill="none" style={logosExpanded ? { transform: 'rotate(180deg)' } : undefined}><path d="M1 1l6 6 6-6" stroke="#062055" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </button>
           </div>
-          </div></div>
+          </div></section>
     </>
   );
 }

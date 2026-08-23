@@ -8,7 +8,7 @@ import type { SectionProps } from '@/lib/props';
 export default function Transit({ t, v }: SectionProps) {
   return (
     <>
-      <div id="transit" data-screen-label="Transit accessibility" className="l2-sec" style={{
+      <section id="transit" data-screen-label="Transit accessibility" aria-labelledby="sec-transit" className="l2-sec" style={{
         // Outside the dir="rtl" wrapper in the original document, so this box
         // laid out LTR and its contents were authored against that.
         direction: "ltr",
@@ -32,7 +32,7 @@ export default function Transit({ t, v }: SectionProps) {
                 letterSpacing: "0.04em",
                 marginBottom: "16px",
               }}>{t.transitEyebrow}</div>
-              <h2 className="l2-reveal l2-h2 l2-fixed-text" style={{
+              <h2 id="sec-transit" className="l2-reveal l2-h2 l2-fixed-text" style={{
                 margin: "0",
                 fontSize: v.transitTitleFontSize,
                 fontWeight: "700",
@@ -54,7 +54,7 @@ export default function Transit({ t, v }: SectionProps) {
                 color: "#3C4351",
               }}>{t.transitP}</p>
             </div>
-          </div></div>
+          </div></section>
     </>
   );
 }

@@ -3,7 +3,7 @@ import type { SectionProps } from '@/lib/props';
 export default function Cooperation({ t, v }: SectionProps) {
   return (
     <>
-      <div id="cooperation" data-screen-label="Cooperation" className="l2-sec" style={{
+      <section id="cooperation" data-screen-label="Cooperation" aria-labelledby="sec-cooperation" className="l2-sec" style={{
         padding: "16px 80px 144px",
         boxSizing: "border-box",
         position: "relative",
@@ -31,7 +31,7 @@ export default function Cooperation({ t, v }: SectionProps) {
               letterSpacing: "0.04em",
               marginBottom: "16px",
             }}>{t.coopEyebrow}</div>
-            <h2 className="l2-reveal l2-h2 l2-fixed-text" style={{
+            <h2 id="sec-cooperation" className="l2-reveal l2-h2 l2-fixed-text" style={{
               margin: "0",
               fontSize: v.coopTitleFontSize,
               fontWeight: "700",
@@ -155,7 +155,7 @@ export default function Cooperation({ t, v }: SectionProps) {
           </div>
           </div>
 
-        </div>
+        </section>
     </>
   );
 }
