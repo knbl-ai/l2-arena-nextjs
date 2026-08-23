@@ -4,6 +4,9 @@ export default function Benefits({ t, v }: SectionProps) {
   return (
     <>
       <div data-screen-label="Cooperation banner" className="l2-sec" style={{
+        // Outside the dir="rtl" wrapper in the original document, so this box
+        // laid out LTR and its contents were authored against that.
+        direction: "ltr",
         padding: "56px 80px 0",
         boxSizing: "border-box",
       }}>

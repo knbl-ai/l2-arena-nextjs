@@ -4,6 +4,9 @@ export default function Team({ t, v }: SectionProps) {
   return (
     <>
       <div data-screen-label="Team" className="l2-sec" style={{
+        // Outside the dir="rtl" wrapper in the original document, so this box
+        // laid out LTR and its contents were authored against that.
+        direction: "ltr",
         padding: "56px 80px 8px",
         boxSizing: "border-box",
         position: "relative",

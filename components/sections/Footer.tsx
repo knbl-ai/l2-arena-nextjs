@@ -5,6 +5,9 @@ export default function Footer({ t, v }: SectionProps) {
   return (
     <>
       <div data-screen-label="Footer" className="l2-sec" style={{
+        // Outside the dir="rtl" wrapper in the original document, so this box
+        // laid out LTR and its contents were authored against that.
+        direction: "ltr",
         background: "#062055",
         padding: "64px 80px",
         boxSizing: "border-box",

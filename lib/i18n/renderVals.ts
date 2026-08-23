@@ -22,17 +22,15 @@ export function getRenderVals(lang: Lang) {
     /*
      * Direction mirroring.
      *
-     * Contact and Footer sit outside the dir="rtl" wrapper in the original
-     * document, so they always laid out in an LTR box and their flex directions
-     * were authored against that. This rebuild sets dir on <html> (the original
-     * left it unset), which makes those boxes RTL — so the Hebrew values have to
-     * match the English ones for the rendered order to stay identical. Verified
-     * by pixel diff against the live site.
+     * These are the original values. They are authored against an LTR box, because
+     * every section that uses them sits outside the dir="rtl" wrapper — see the
+     * `direction: 'ltr'` on those section roots, which makes that inherited context
+     * explicit now that <html> carries dir.
      */
-    contactRowDirection: 'row' as const,
-    rfpBtnFlexDirection: 'row-reverse' as const,
-    footerRowDirection: 'row-reverse' as const,
-    footerLogoDirection: 'row-reverse' as const,
+    contactRowDirection: isHe ? ('row-reverse' as const) : ('row' as const),
+    rfpBtnFlexDirection: isHe ? ('row' as const) : ('row-reverse' as const),
+    footerRowDirection: isHe ? ('row' as const) : ('row-reverse' as const),
+    footerLogoDirection: isHe ? ('row' as const) : ('row-reverse' as const),
     benefitArrowFlip: isHe ? 'none' : 'rotate(180deg)',
     quoteMarkFlip: isHe ? 'none' : 'scaleX(-1)',
     bgArcsTransform: isHe ? 'none' : 'scaleX(-1) translateY(-24px)',

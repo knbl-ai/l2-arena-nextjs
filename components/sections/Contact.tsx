@@ -4,6 +4,9 @@ export default function Contact({ t, v }: SectionProps) {
   return (
     <>
         <div id="contact" data-screen-label="Contact and RFP" className="l2-sec" style={{
+          // Outside the dir="rtl" wrapper in the original document, so this box
+          // laid out LTR and its contents were authored against that.
+          direction: "ltr",
           position: "relative",
           padding: "24px 80px 56px",
           boxSizing: "border-box",

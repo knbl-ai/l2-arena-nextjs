@@ -19,6 +19,9 @@ export default function PartnerLogos({ t, v }: SectionProps) {
   return (
     <>
       <div data-screen-label="Partners who worked with the city" className="l2-sec" style={{
+        // Outside the dir="rtl" wrapper in the original document, so this box
+        // laid out LTR and its contents were authored against that.
+        direction: "ltr",
         position: "relative",
         padding: "0 0 48px",
         boxSizing: "border-box",
