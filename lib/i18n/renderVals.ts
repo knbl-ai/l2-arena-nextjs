@@ -68,7 +68,7 @@ export function getRenderVals(lang: Lang) {
     transitTitleHeight: isHe ? '68px' : 'auto',
     titleWrapMode: isHe ? ('nowrap' as const) : ('normal' as const),
     coopTitleWrap: 'normal' as const,
-    deadlineDateSize: isHe ? 'inherit' : '34px',
+    deadlineDateSize: isHe ? '44px' : '34px',
 
     // Timeline ordering
     timelineTextOrder: isHe ? 0 : 2,
